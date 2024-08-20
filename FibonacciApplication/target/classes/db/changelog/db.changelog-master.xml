@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="initial" author="alexandergrosu">
+        <!-- create table fibonacci -->
+        <createTable tableName="fibonacci">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="number" type="INT"/>
+            <column name="fibonacci_value" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    <!-- change data type int -> bigint -->
+    <changeSet id="change-data-type" author="alexandergrosu">
+        <modifyDataType tableName="fibonacci" columnName="number" newDataType="BIGINT"/>
+        <modifyDataType tableName="fibonacci" columnName="fibonacci_value" newDataType="BIGINT"/>
+    </changeSet>
+
+</databaseChangeLog>
