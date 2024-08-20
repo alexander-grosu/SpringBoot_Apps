@@ -2,7 +2,6 @@ package org.example.springexample.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -11,7 +10,6 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Builder
 @Entity
 @Table(name = "fibonacci")
 public class Fibonacci {
